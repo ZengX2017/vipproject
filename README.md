@@ -12,8 +12,7 @@
 	  
 ## 4. 本项目现已上线，网站为：http://www.adwardmovie.top 。由于之前设置的时候弄了一下https，导致有时候会自动转到https，https是打不开的。
 
-## 5. 得益于以下小伙伴的协助：  
-			Cassielala[https://github.com/Cassie918]
+## 5. 得益于以下小伙伴的协助：Cassielala[https://github.com/Cassie918]
 			
 			
 ## 6. 本项目会收集意见一直更新
