@@ -1,0 +1,59 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>VIP视频解析</title>
+<meta name="description" content="本站为广大网友提供各大网站VIP解析">
+<meta name="viewport" content="width=device-width,anicital-scale=1">
+<link rel="stylesheet" href="jscss4/bootstrap.min.css">
+<link rel="stylesheet" href="jscss4/style.css" charset="utf-8">
+</head>
+<body>
+
+
+<!--视频box区域-->
+<div class="container-fluid video-box">
+        <div class="container ">
+                <iframe id="palybox" src="http://vip.gzzza.com/vip.php?url=" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+                <div class="url-box">
+                        <div class="input-group">
+                                <input type="text" id="url" class="form-control url-text" aria-label="Text input with segmented button dropdown" placeholder="请在这粘贴视频网址" title="请复制你想要看的视频网址，粘贴到此处点击播放即可！">
+                                <div class="input-group-btn">
+                                        <button type="button" class="btn btn-default btn-play" title="点击开始解析并开始>播放" onclick="play()">解析播放</button>
+                                </div>
+                        </div>
+                </div>
+                <div class="tit-gg">
+                        <red>注：此站不提供广告，若出现广告，可能是ip被挟持。</red><br/>
+                        <strong>操作步骤：<br/>
+						&nbsp;&nbsp;1，去相应网站打开要看的视频；<br/>
+						&nbsp;&nbsp;2，复制地址栏的链接；<br/>
+						&nbsp;&nbsp;3，将链接粘贴至输入框，然后点击->解析播放。<br/>
+						</strong>
+						<red>提示：如果默认解析不能播放，请更换接口(切换线路)</red><br/>
+						<br/>
+						<strong>技术支持：<red>Cassielala</red>，一直会更新</strong><br/>
+                        <strong>如果觉得不错，打个赏呗！<span>赏</span></strong>
+                </div>
+        </div>
+        <div class="QRCode">
+                <img src="./jscss4/qrCode.jpg" width="250px" height="250px"/>
+        </div>
+        
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script src="./jscss4/vip.js"></script>
+<script src="https://s5.cnzz.com/z_stat.php?id=1275853592&web_id=1275853592" language="JavaScript"></script>
+<script>
+        function play() {
+                var rul = document.getElementById("url").value;
+                if(rul == "") {
+                        alert("vip解析提示您：请输入链接")
+                } else {
+                        var paly = document.getElementById("palybox"); //获取播放窗口位置
+                        var jkv = "http://vip.gzzza.com/vip.php?url=";
+                        paly.src = jkv + rul; //接口赋值
+                }
+        }
+</script>
+</body></html>
