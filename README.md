@@ -10,7 +10,7 @@
 	  3，将链接粘贴至输入框，然后点击->解析播放。
 	  提示：如果默认解析不能播放，请更换接口(切换线路)
 	  
-## 4. 本项目现已上线，网站为：http://www.adwardmovie.top 。由于之前设置的时候弄了一下https，导致有时候会自动转到https，https是打不开的。
+## 4. 本项目现已上线，网站为：www.adwardmovie.top 。http和https均可访问
 
 ## 5. 得益于以下小伙伴的协助：[Cassielala](https://github.com/Cassie918)
 			

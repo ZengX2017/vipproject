@@ -13,7 +13,7 @@
 <!--视频box区域-->
 <div class="container-fluid video-box">
         <div class="container ">
-                <iframe id="palybox" src="http://vip.gzzza.com/vip.php?url=" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+                <iframe id="palybox" src="https://vip.gzzza.com/vip.php?url=" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
                 <div class="url-box">
                         <div class="input-group">
                                 <input type="text" id="url" class="form-control url-text" aria-label="Text input with segmented button dropdown" placeholder="请在这粘贴视频网址" title="请复制你想要看的视频网址，粘贴到此处点击播放即可！">
@@ -51,7 +51,7 @@
                         alert("vip解析提示您：请输入链接")
                 } else {
                         var paly = document.getElementById("palybox"); //获取播放窗口位置
-                        var jkv = "http://vip.gzzza.com/vip.php?url=";
+                        var jkv = "https://vip.gzzza.com/vip.php?url=";
                         paly.src = jkv + rul; //接口赋值
                 }
         }
