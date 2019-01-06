@@ -1,59 +1,192 @@
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>VIP视频解析</title>
-<meta name="description" content="本站为广大网友提供各大网站VIP解析">
-<meta name="viewport" content="width=device-width,anicital-scale=1">
-<link rel="stylesheet" href="jscss4/bootstrap.min.css">
-<link rel="stylesheet" href="jscss4/style.css" charset="utf-8">
-</head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VIP视频在线解析</title>
+<meta name="keywords" content="VIP电影解析">
+<meta name="description" content="免费在线播放VIP视频">
+<link href="./jscss4/bootstrap.min.css" rel="stylesheet">
 <body>
-
-
-<!--视频box区域-->
-<div class="container-fluid video-box">
-        <div class="container ">
-                <iframe id="palybox" src="https://vip.gzzza.com/vip.php?url=" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
-                <div class="url-box">
-                        <div class="input-group">
-                                <input type="text" id="url" class="form-control url-text" aria-label="Text input with segmented button dropdown" placeholder="请在这粘贴视频网址" title="请复制你想要看的视频网址，粘贴到此处点击播放即可！">
-                                <div class="input-group-btn">
-                                        <button type="button" class="btn btn-default btn-play" title="点击开始解析并开始>播放" onclick="play()">解析播放</button>
-                                </div>
-                        </div>
-                </div>
-                <div class="tit-gg">
-                        <red>注：此站不提供广告，若出现广告，可能是ip被挟持。</red><br/>
-                        <strong>操作步骤：<br/>
-						&nbsp;&nbsp;1，去相应网站打开要看的视频；<br/>
-						&nbsp;&nbsp;2，复制地址栏的链接；<br/>
-						&nbsp;&nbsp;3，将链接粘贴至输入框，然后点击->解析播放。<br/>
-						</strong>
-						<red>提示：如果默认解析不能播放，请更换接口(切换线路)</red><br/>
-						<br/>
-						<strong>技术支持：<red>Cassielala</red>，一直会更新</strong><br/>
-                        <strong>如果觉得不错，打个赏呗！<span>赏</span></strong>
-                </div>
+	<div id="ad_left" style="position: fixed; width: 120px; height: 280px; z-index: 10001; top: 187px; left: 3px;">
+		<a style="position:absolute;top:3px;left:5px;" href="javascript:void(0);" onclick="document.getElementById(&#39;ad_left&#39;).style.display=&#39;none&#39;">
+			<img src="./jscss4/x.png"></a>
+		<a target="_blank" href="#">
+			<img src="./jscss4/alipay.jpg" width="180" height="265">
+		</a>
+	</div>
+	<nav class="navbar navbar-fixed-top navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="https://www.adwardmovie.top">在线解析</a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="mailto:adwardzx@outlook.com"><b>发邮件提建议</b></a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+    
+	<br/>
+    
+    <div class="container" style="padding-top:50px;">
+      <div class="col-md-14 column">
+        <div class="panel panel-default">
+          <div class="panel-body">
+			<b>本站不提供广告，免费使用。网页可能会出现加载慢的情况，请稍加等待。</b>
+			<br/>
+			<b>经测试，手机端访问总是会出现sq广告，请各位尽量不要用手机端访问，给大家带来的不便敬请谅解。</b>
+			<br/>
+			<strong>操作步骤：
+				<br/>1，去相应网站打开要看的视频；
+				<br/>2，复制地址栏的链接；
+				<br/>3，将链接粘贴至输入框，然后点击->解析播放。
+				<br/>提示：若选择的解析不能播放，请更换接口(切换线路)
+			</strong>
+			<hr/>
+			可以支持一下：【<b>打开支付宝首页搜“642017764”领红包，领到大红包的小伙伴赶紧使用哦！</b>】<br/>
+			</div>
+		</div>
+      </div> 
+      
+      <div class="col-md-14 column">
+        <div class="panel panel-default">
+          <div class="panel-body">
+			<iframe width="100%" height="600px" allowtransparency="true" frameborder="0" scrolling="no" src="./jscss4/video_api.html" id="palybox"></iframe>
+          </div>
         </div>
-        <div class="QRCode">
-                <img src="./jscss4/qrCode.jpg" width="250px" height="250px"/>
-        </div>
-        
-</div>
+      </div>
+	  
+      <div class="col-md-14 column">
+	  	  <div class="alert alert-success">提示：若选择的解析不能播放，请更换接口(切换线路)</div>
+		  
+		  <form method="get">
+			<div class="input-group" style="width: 100%;">
+				<span class="input-group-addon input-lg" style="width: 80px;">选择接口</span>
+            	<select class="form-control input-lg" id="selected">
+                    	<option value="https://api.bbbbbb.me/jx/?url=">通用VIP接口1【若解析不成功请换接口】</option>
+						<option value="https://aikan-tv.com/?url=">通用VIP接口2【若解析不成功请换接口】</option>
+						<option value="https://jx.618ge.com/?url=">通用VIP接口3【若解析不成功请换接口】</option>
+						<option value="http://jx.ovov.cc/?url=">通用VIP接口4【若解析不成功请换接口】</option>
+						<option value="https://jx.aeidu.cn/index.php?url=">通用VIP接口5【若解析不成功请换接口】</option>
+						<option value="https://000o.cc/jx/ty.php?url=">通用VIP接口6【若解析不成功请换接口】</option>
+						<option value="http://api.nepian.com/ckparse/?url=">通用VIP接口7【若解析不成功请换接口】</option> 
+						<option value="https://jx.598110.com/?url=">通用VIP接口8【若解析不成功请换接口】</option>
+						<option value="http://app.baiyug.cn:2019/vip/?url= ">通用VIP接口9【若解析不成功请换接口】</option>
+				</select>
+			</div>
+			
+			<br/>
+			<div class="input-group" style="width: 100%;">
+				<span class="input-group-addon input-lg" style="width: 80px;">播放地址</span>
+				<input class="form-control input-lg" type="text" name="url" id="url" placeholder="复制视频播放地址、粘贴过来点击播放">
+			</div>
+			<br/>
+			<div><button type="button" class="btn btn-default btn-lg btn-block" onclick="play()">立即播放</button></div>
+        </form>
+		
+      </div>
+	  
+    </div>
+    <br/>
+	<hr/>
+	
+	<footer id="footer">
+		<div class="container">
+			<div class="row inner hidden-xs">
+				<dl class="col-sm-12 site-link text-center">
+					<dt>声明：本站的资源源于互联网，仅收集接口供各位使用，一直会更新</dt>
+					<dd>协助伙伴：<a target="_blank" href="https://github.com/Cassie918">Cassielala</a></dd>
+				</dl>
+			</div>
+		</div>
+	</footer>
 
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
-<script src="./jscss4/vip.js"></script>
-<script src="https://s5.cnzz.com/z_stat.php?id=1275853592&web_id=1275853592" language="JavaScript"></script>
-<script>
-        function play() {
-                var rul = document.getElementById("url").value;
-                if(rul == "") {
-                        alert("vip解析提示您：请输入链接")
-                } else {
-                        var paly = document.getElementById("palybox"); //获取播放窗口位置
-                        var jkv = "https://vip.gzzza.com/vip.php?url=";
-                        paly.src = jkv + rul; //接口赋值
-                }
+    <br/>
+	
+	<div style="display:none">
+		<script src="https://s5.cnzz.com/z_stat.php?id=1275853592&web_id=1275853592" language="JavaScript"></script>
+	</div>
+	<script src="./jscss4/jquery.min.js"></script>
+	<script src="./jscss4/bootstrap.min.js"></script>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+	<script type="text/javascript">
+	//禁止查看源码
+	window.onload = function(){
+		document.onkeydown = function(){
+			var e=window.event||arguments[0];
+			if(e.keyCode==123){
+				return false;
+			}else if((e.ctrlKey)&&(e.shiftKey)&&(e.keyCode==73)){
+				return false;
+			}
+		};
+		document.oncontextmenu=function(){
+			return false;
+		}
+	}
+	
+	//判断F12审查元素
+	//防止页面后退和查看检查元素
+	function fuckyou() {
+		window.close(); //关闭当前窗口(防抽)
+		window.location = "about:blank"; //将当前窗口跳转置空白页
+		history.pushState(null, null, document.URL);
+        window.addEventListener('popstate', function () {
+            history.pushState(null, null, document.URL);
+        });
+	}
+
+	function ck() {
+		console.profile();
+		console.profileEnd();
+		//我们判断一下profiles里面有没有东西，如果有，肯定有人按F12了，没错！！
+		if(console.clear) {
+			console.clear()
+		};
+		if(typeof console.profiles == "object") {
+			return console.profiles.length > 0;
+		}
+	}
+	
+	function hehe() {
+		if((window.console && (console.firebug || console.table && /firebug/i.test(console.table()))) || (typeof opera == 'object' && typeof opera.postError == 'function' && console.profile.length > 0)) {
+			fuckyou();
+		}
+		if(typeof console.profiles == "object" && console.profiles.length > 0) {
+			fuckyou();
+		}
+	}
+	hehe();
+	window.onresize = function() {
+		if((window.outerHeight - window.innerHeight) > 200)
+			//判断当前窗口内页高度和窗口高度，如果差值大于200，那么呵呵
+			fuckyou();
+	}
+	</script>
+	<script>
+		var result = window.matchMedia('(max-width: 768px)');
+		if (result.matches) {
+			document.getElementById('ad_left').style.display = 'none';
+		}
+		
+		function play() { 
+			 var options=$("#selected option:selected").val(); //取得下拉框当前所选的内容
+             var rul = $("#url").val();
+             if(rul == "") {
+                     alert("vip解析提示您：请输入链接")
+             } else {
+                     var paly = document.getElementById("palybox"); //获取播放窗口位置
+                     paly.src = options + rul; //接口赋值
+             }
         }
-</script>
-</body></html>
+	</script>
+	
+</body>
+</html>
