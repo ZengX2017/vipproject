@@ -41,7 +41,7 @@
           <div class="panel-body">
 			<b>本站不提供广告，免费使用。网页可能会出现加载慢的情况，请稍加等待。</b>
 			<br/>
-			<b>经测试，手机端访问总是会出现sq广告，请各位尽量不要用手机端访问，给大家带来的不便敬请谅解。</b>
+			<b><font color='red'>经反馈，移动端(手机端+Pad端)访问总是会出现sq广告以及部分时候会出现不能操作的情况，请各位尽量不要用移动端访问，给大家带来的不便敬请谅解。</font></b>
 			<br/>
 			<strong>操作步骤：
 				<br/>1，去相应网站打开要看的视频；
@@ -51,6 +51,8 @@
 			</strong>
 			<hr/>
 			可以支持一下：【<b>打开支付宝首页搜“642017764”领红包，领到大红包的小伙伴赶紧使用哦！</b>】<br/>
+			<hr/>
+			<font color='red'>2019年1月24日更新：添加来必力评论功能</font>
 			</div>
 		</div>
       </div> 
@@ -66,7 +68,7 @@
       <div class="col-md-14 column">
 	  	  <div class="alert alert-success">提示：若选择的解析不能播放，请更换接口(切换线路)</div>
 		  
-		  <form method="get">
+		  <form>
 			<div class="input-group" style="width: 100%;">
 				<span class="input-group-addon input-lg" style="width: 80px;">选择接口</span>
             	<select class="form-control input-lg" id="selected">
@@ -92,9 +94,22 @@
         </form>
 		
       </div>
-	  
+	<!-- 评论模块begin -->
+	<div id="lv-container" data-id="city" data-uid="MTAyMC80MjMyNi8xODg3Mw==" class="col-md-14 column">
+		<script type="text/javascript">
+   		(function(d, s) {
+      			 var j, e = d.getElementsByTagName(s)[0];
+      			 if (typeof LivereTower === 'function') { return; }
+       			 j = d.createElement(s);
+       			 j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       			 j.async = true;
+       			 e.parentNode.insertBefore(j, e);
+   		})(document, 'script');
+		</script>
+		<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+	</div>
+	<!-- 评论模块end -->  
     </div>
-    <br/>
 	<hr/>
 	
 	<footer id="footer">
@@ -134,7 +149,7 @@
 	
 	//判断F12审查元素
 	//防止页面后退和查看检查元素
-	function fuckyou() {
+	function stay_now() {
 		window.close(); //关闭当前窗口(防抽)
 		window.location = "about:blank"; //将当前窗口跳转置空白页
 		history.pushState(null, null, document.URL);
@@ -157,17 +172,17 @@
 	
 	function hehe() {
 		if((window.console && (console.firebug || console.table && /firebug/i.test(console.table()))) || (typeof opera == 'object' && typeof opera.postError == 'function' && console.profile.length > 0)) {
-			fuckyou();
+			stay_now();
 		}
 		if(typeof console.profiles == "object" && console.profiles.length > 0) {
-			fuckyou();
+			stay_now();
 		}
 	}
 	hehe();
 	window.onresize = function() {
 		if((window.outerHeight - window.innerHeight) > 200)
 			//判断当前窗口内页高度和窗口高度，如果差值大于200，那么呵呵
-			fuckyou();
+			stay_now();
 	}
 	</script>
 	<script>
