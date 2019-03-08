@@ -12,7 +12,7 @@
 		<a style="position:absolute;top:3px;left:5px;" href="javascript:void(0);" onclick="document.getElementById(&#39;ad_left&#39;).style.display=&#39;none&#39;">
 			<img src="./jscss4/x.png"></a>
 		<a target="_blank" href="#">
-			<img src="./jscss4/alipay.jpg" width="180" height="265">
+			<img src="./jscss4/alipay.jpg" width="180" height="265" style="display:none">
 		</a>
 	</div>
 	<nav class="navbar navbar-fixed-top navbar-default">
@@ -52,6 +52,7 @@
 			<hr/>
 			可以支持一下：【<b>打开支付宝首页搜“642017764”领红包，领到大红包的小伙伴赶紧使用哦！</b>】<br/>
 			<hr/>
+			<font color='red'>2019年3月8日更新：进行了一些优化</font>
 			<font color='red'>2019年1月24日更新：添加来必力评论功能</font>
 			</div>
 		</div>
@@ -79,8 +80,7 @@
 						<option value="https://jx.aeidu.cn/index.php?url=">通用VIP接口5【若解析不成功请换接口】</option>
 						<option value="https://000o.cc/jx/ty.php?url=">通用VIP接口6【若解析不成功请换接口】</option>
 						<option value="http://api.nepian.com/ckparse/?url=">通用VIP接口7【若解析不成功请换接口】</option> 
-						<option value="https://jx.598110.com/?url=">通用VIP接口8【若解析不成功请换接口】</option>
-						<option value="http://app.baiyug.cn:2019/vip/?url= ">通用VIP接口9【若解析不成功请换接口】</option>
+						<option value="http://app.baiyug.cn:2019/vip/?url= ">通用VIP接口8【若解析不成功请换接口】</option>
 				</select>
 			</div>
 			
@@ -131,68 +131,23 @@
 	<script src="./jscss4/jquery.min.js"></script>
 	<script src="./jscss4/bootstrap.min.js"></script>
 	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
-	<script type="text/javascript">
-	//禁止查看源码
-	window.onload = function(){
-		document.onkeydown = function(){
-			var e=window.event||arguments[0];
-			if(e.keyCode==123){
-				return false;
-			}else if((e.ctrlKey)&&(e.shiftKey)&&(e.keyCode==73)){
-				return false;
-			}
-		};
-		document.oncontextmenu=function(){
-			return false;
-		}
-	}
-	
-	//判断F12审查元素
-	//防止页面后退和查看检查元素
-	function stay_now() {
-		window.close(); //关闭当前窗口(防抽)
-		window.location = "about:blank"; //将当前窗口跳转置空白页
-		history.pushState(null, null, document.URL);
-        window.addEventListener('popstate', function () {
-            history.pushState(null, null, document.URL);
-        });
-	}
-
-	function ck() {
-		console.profile();
-		console.profileEnd();
-		//我们判断一下profiles里面有没有东西，如果有，肯定有人按F12了，没错！！
-		if(console.clear) {
-			console.clear()
-		};
-		if(typeof console.profiles == "object") {
-			return console.profiles.length > 0;
-		}
-	}
-	
-	function hehe() {
-		if((window.console && (console.firebug || console.table && /firebug/i.test(console.table()))) || (typeof opera == 'object' && typeof opera.postError == 'function' && console.profile.length > 0)) {
-			stay_now();
-		}
-		if(typeof console.profiles == "object" && console.profiles.length > 0) {
-			stay_now();
-		}
-	}
-	hehe();
-	window.onresize = function() {
-		if((window.outerHeight - window.innerHeight) > 200)
-			//判断当前窗口内页高度和窗口高度，如果差值大于200，那么呵呵
-			stay_now();
-	}
-	</script>
 	<script>
-		var result = window.matchMedia('(max-width: 768px)');
-		if (result.matches) {
-			document.getElementById('ad_left').style.display = 'none';
-		}
-		
-		function play() { 
-			 var options=$("#selected option:selected").val(); //取得下拉框当前所选的内容
+	document.getElementById('ad_left').style.display = 'none';
+	
+	// get请求
+	function getQueryVariable(){
+       var query = window.location.search;
+	   pos = query.indexOf("="); //substr(1);
+	   query = query.substring(pos + 1, query.length);
+       var paly = document.getElementById("palybox"); //获取播放窗口位置
+       paly.src = "https://api.bbbbbb.me/jx/?url=" + query; //接口赋值
+       $("#url").val(query);
+	}
+	
+	getQueryVariable();
+	
+	function play() { 
+	var options=$("#selected option:selected").val(); //取得下拉框当前所选的内容
              var rul = $("#url").val();
              if(rul == "") {
                      alert("vip解析提示您：请输入链接")
@@ -202,6 +157,5 @@
              }
         }
 	</script>
-	
 </body>
 </html>
